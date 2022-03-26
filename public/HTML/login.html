@@ -30,7 +30,7 @@
           <p id="emailErr" class="error"></p>
         </div>
         <div class="field">
-          <input id="password" type="password" required />
+          <input id="password" type="password" min="8" pattern="[A-Za-z0-9]+" required />
           <label>Password</label>
           <p id="passwordErr" class="error"></p>
         </div>
@@ -42,5 +42,6 @@
         </div>
       </form>
     </section>
+    <script src="../JS/login.js"></script>
   </body>
 </html>
