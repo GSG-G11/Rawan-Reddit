@@ -45,13 +45,13 @@ body {
 }
 
 .wrapper form {
-  padding: 10px 30px 50px 30px;
+  padding: 10px 30px 30px 30px;
 }
 
 .wrapper form .field {
   height: 50px;
   width: 100%;
-  margin-top: 20px;
+  margin: 25px 0;
   position: relative;
 }
 
@@ -128,10 +128,10 @@ form .signup-link a:hover {
   text-decoration: underline;
 }
 
-.error {
+.wrapper form .field .error {
   width: 70%;
-  min-height: 1.5em;
-  margin: 0.3em auto 0.5em;
+  height: 2rem;
+  margin: 0.3em 1.7em;
   font-size: 10px;
   color: red;
   text-transform: uppercase;
