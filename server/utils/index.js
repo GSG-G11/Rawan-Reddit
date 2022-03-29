@@ -5,5 +5,5 @@ module.exports = {
   signToken,
   verifyToken,
   loginSchema,
-  signupSchema,
+  signupSchema
 };

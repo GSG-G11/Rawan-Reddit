@@ -23,4 +23,4 @@ const signupSchema = Joi.object({
 
 });
 
-module.exports = {signupSchema};
+module.exports = signupSchema;

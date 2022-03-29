@@ -1,7 +1,7 @@
 const { login, signup, home, profile } = require('./pages');
-const { signupControllers, loginControllers, getUsers } = require('./users');
+const { signupControllers, loginControllers, getUsers , logoutControllers} = require('./users');
 const { addPostControllers ,getPostControllers} = require('./posts');
-const {addCommentController, getCommentController} = require('./comments');
+const {addCommentController, getCommentController, deleteCommentController} = require('./comments');
 
 module.exports = {
   login,
@@ -14,5 +14,7 @@ module.exports = {
   addPostControllers,
   getPostControllers,
   addCommentController,
-  getCommentController
+  getCommentController,
+  deleteCommentController,
+  logoutControllers
 };

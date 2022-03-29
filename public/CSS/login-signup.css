@@ -6,9 +6,25 @@
   box-sizing: border-box;
 }
 
+/* scrollbar */
+::-webkit-scrollbar {
+  background: #d4b1d3;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a987a8;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #693b69;
+}
+
 html {
   background-image: linear-gradient(135deg, #ecd4ea 10%, #693b69 100%);
   background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 html,

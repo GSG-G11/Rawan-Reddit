@@ -24,6 +24,8 @@
 html {
   background-image: linear-gradient(135deg, #ecd4ea 10%, #693b69 100%);
   height: auto;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 html,
@@ -176,6 +178,8 @@ form .field button:active {
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
+  /* display: flex;
+  justify-content: space-evenly; */
 }
 
 .box .post .post_data p ,
@@ -233,6 +237,20 @@ form .field button:active {
 
 .comment .btnComment:active {
   transform: scale(0.95);
+}
+
+.Delete{
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  background: #a987a8;
+  transition: all 0.3s ease;
+  height: 50px;
+  width: 35%;
+  outline: none;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  margin-top: 8px;
 }
 
 aside {

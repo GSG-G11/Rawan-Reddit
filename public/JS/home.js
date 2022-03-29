@@ -6,6 +6,12 @@ const description = document.getElementById('description');
 // const saveComment = document.getElementsByClassName('btnComment')
 // const inputComment = document.getElementById('inputComment')
 
+const deleteFunction = (id)=> fetch(`/delete/${id}`,{
+  method:'DELETE',
+  headers:{ 'Content-Type': 'application/json'},
+  redirect: 'follow',
+})
+
 fetch('/users')
   .then((response) => response.json())
   .then((userArr) => {
@@ -45,7 +51,7 @@ fetch('/post')
   .then((commentArr) => {
     // console.log(commentArr);
     commentArr.forEach((e) => {
-      // createComment(e,id);
+      // createComment(e);
       const comments = document.getElementById(e.post_id)
 
       const postComment =document.createElement('div')
@@ -58,29 +64,15 @@ fetch('/post')
       const description =document.createElement('p')
       description.textContent = e.description;
 
-      postComment.append(username,description)
+      const deleteBtn = document.createElement('button');
+      deleteBtn.className='Delete';
+      deleteBtn.textContent='Delete';
+      deleteBtn.onclick=()=>{
+      deleteFunction(e.id)
+      window.location.assign('/')
+      }
+
+      postComment.append(username,description,deleteBtn)
       comments.append(postComment)
     });
   });
-
-// const logout=document.getElementById('logout')
-// const signup=document.getElementById('signup')
-// const login=document.getElementById('login')
-// const profile=document.getElementById('profile')
-
-// const showProfileLogout = () => {
-//   logout.style.display = 'inline-block';
-//   profile.style.display = 'inline-block';
-//   signup.style.display = 'none';
-//   login.style.display = 'none';
-// };
-// const hideProfileLogout = () => {
-//   logout.style.display = 'none';
-//   profile.style.display = 'none';
-//   signup.style.display = 'inline-block';
-//   login.style.display = 'inline-block';
-// };
-// const checkCookie = (data) => {
-//   if (data.message === 'Unauthorized') hideProfileLogout();
-//   else showProfileLogout();
-// };
