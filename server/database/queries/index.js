@@ -1,6 +1,6 @@
 const {getUserQuery,postUserQuery, getUserByEmailQuery} = require('./usersQueries');
 const {addPostQuery,getPostQuery} =require('./postsQueries')
-const {addCommentQuery,getCommentQuery} =require('./commentsQueries')
+const {addCommentQuery,getCommentQuery,deleteCommentQuery} =require('./commentsQueries')
 
 module.exports = {
     getUserQuery,
@@ -9,5 +9,6 @@ module.exports = {
     addPostQuery,
     getPostQuery,
     addCommentQuery,
-    getCommentQuery
+    getCommentQuery,
+    deleteCommentQuery
 }

@@ -29,7 +29,7 @@ const postlogin = (req, res, next) => {
       res
         .cookie('id', token)
         .redirect('/')
-        .json("login");
+        // .json("login");
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {

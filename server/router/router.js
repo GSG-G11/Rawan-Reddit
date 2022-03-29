@@ -14,6 +14,8 @@ const {
   getPostControllers,
   addCommentController,
   getCommentController,
+  deleteCommentController,
+  logoutControllers
 } = require('../controllers/');
 
 const router = express.Router();
@@ -28,10 +30,12 @@ router.get('/users', getUsers);
 
 router.post('/posts/:id/comments', middleware, addCommentController);
 router.get('/posts/comments', getCommentController);
+router.delete("/delete/:id", deleteCommentController);
+
 //pages router
 router.get('/', home);
-router.get('/profile', profile);
+router.get('/profile',middleware, profile);
 router.get('/login', login);
 router.get('/signup', signup);
-
+router.get("/logout", logoutControllers);
 module.exports = router;
