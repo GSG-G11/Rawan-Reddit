@@ -44,5 +44,20 @@ const checkPassword = () => {
       event.preventDefault();
     }
     event.preventDefault();
+    fetch("/api/v1/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      redirect: "follow",
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value,
+      }),
+    }).then((response) => {
+      if (response.redirected) {
+        window.location.href = response.url;
+      }
+      return response;
+    })
+    .then(response=> response.json())
   });
   

@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
+/* scrollbar */
+::-webkit-scrollbar {
+  background: #d4b1d3;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a987a8;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #693b69;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -123,14 +138,23 @@ form .field button:active {
   margin: 10px 10px;
   padding: 20px 30px;
   border-radius: 5px;
+  flex-direction: column;
+}
+.posts .box .post{
+  width: 100%;
+  display: flex;
 }
 
-.posts .box .user_data,
-.posts .box .post_data {
+.posts .box hr{
+  color: #693b69;
+}
+
+.posts .box .post .user_data,
+.posts .box .post .post_data {
   padding: 10px;
 }
 
-.posts .box .user_data .image {
+.posts .box .post .user_data .image {
   margin: 10px 0;
   height: 100px;
   width: 100px;
@@ -139,7 +163,7 @@ form .field button:active {
   border-radius: 50%;
 }
 
-.box .user_data .image img {
+.box .post .user_data .image img {
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -147,15 +171,24 @@ form .field button:active {
   border: 2px solid #fff;
 }
 
-.box .post_data p {
+.box .comments .postComment{
+  background-color: #ffdbfe;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.box .post .post_data p ,
+.box .comments .postComment p{
   text-align: justify;
   margin-top: 8px;
   font-size: 16px;
   font-weight: 400;
 }
 
-.box .user_data .username,
-.box .post_data .post_title {
+.box .post .user_data .username,
+.box .post .post_data .post_title,
+.box .comments .postComment .username{
   margin: 10px 0 3px 0;
   color: #a987a8;
   font-size: 18px;
@@ -216,7 +249,8 @@ aside {
   height: 100%;
 }
 
-.wrap-users h2 {
+.wrap-users h2 ,
+.comments h2{
   color: #693b69;
 }
 
