@@ -13,6 +13,7 @@ const addComment= (id,inputComment)=> fetch(`/posts/${id}/comments`, {
 });
 
 const createUser = (userDATA) => {
+  console.log(userDATA);
   const user = document.createElement('div');
   user.className = 'user';
 
@@ -25,7 +26,10 @@ const createUser = (userDATA) => {
   const username = document.createElement('h3');
   username.className = 'username';
   username.textContent = userDATA.username;
-
+  username.onclick=()=>{
+    addProfile(userDATA.id)
+    // window.location.assign('/')
+  }
   image.appendChild(img);
 
   user.appendChild(image);
