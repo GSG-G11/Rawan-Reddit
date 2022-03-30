@@ -72,7 +72,11 @@ fetch('/post')
       window.location.assign('/')
       }
 
-      postComment.append(username,description,deleteBtn)
-      comments.append(postComment)
+      postComment.appendChild(username)
+      postComment.appendChild(description)
+      postComment.appendChild(deleteBtn)
+      
+      // postComment.append(username,description,deleteBtn)
+      comments.appendChild(postComment)
     });
   });

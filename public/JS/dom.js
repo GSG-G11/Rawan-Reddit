@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 
 const users = document.querySelector('.users');
@@ -12,31 +13,19 @@ const addComment= (id,inputComment)=> fetch(`/posts/${id}/comments`, {
   }),
 });
 
-const createUser = (userDATA) => {
-  console.log(userDATA);
-  const user = document.createElement('div');
-  user.className = 'user';
+// const createProfile = (user) => {
+//   console.log(user[0].user_url_img);
+//   const profileimage = document.querySelector('.profileimage')
+//   const img = document.createElement('img')
+//   img.src =user[0].user_url_img
+//   profileimage.appendChild(img)
+//   };
 
-  const image = document.createElement('div');
-  image.className = 'image';
-
-  const img = document.createElement('img');
-  img.src = userDATA.user_url_img;
-
-  const username = document.createElement('h3');
-  username.className = 'username';
-  username.textContent = userDATA.username;
-  username.onclick=()=>{
-    addProfile(userDATA.id)
-    // window.location.assign('/')
-  }
-  image.appendChild(img);
-
-  user.appendChild(image);
-  user.appendChild(username);
-
-  users.appendChild(user);
-};
+// const deletePostFunction = (id)=> fetch(`/posts/${id}`,{
+//   method:'DELETE',
+//   headers:{ 'Content-Type': 'application/json'},
+//   redirect: 'follow',
+// })
 
 const createPost = (postDATA) => {
   const box = document.createElement('div');
@@ -84,6 +73,15 @@ const createPost = (postDATA) => {
     window.location.assign('/')
   }
 
+  
+  // const deletePostBtn = document.createElement('button');
+  // deletePostBtn.className='Delete';
+  // deletePostBtn.textContent='Delete';
+  // deletePostBtn.onclick=()=>{
+  // deletePostFunction(postDATA.id)
+  // window.location.assign('/')
+  // }
+
   const hr = document.createElement('hr');
   
   const comments = document.createElement('div');
@@ -101,6 +99,7 @@ const createPost = (postDATA) => {
   comment.appendChild(inputComment);
   comment.appendChild(btnComment);
 
+  // post_data.appendChild(deletePostBtn)
   post_data.appendChild(post_title);
   post_data.appendChild(post_description);
   post_data.appendChild(comment);
@@ -120,3 +119,46 @@ const createPost = (postDATA) => {
 // const createComment = (commentData,id) => {
 
 // }
+
+
+// const addProfile = (userId) =>
+//   fetch(`/profile/${userId}/show`)
+//     .then((response) => response.json())
+//     .then(([user,posts]) => {
+//       const profileimage = document.querySelector('.profileimage')
+//       const profileimg = document.createElement('img')
+//       profileimg.src =user[0].user_url_img
+//       // console.log(user[0].user_url_img);
+//       console.log(profileimage);
+//       profileimage.appendChild(profileimg)
+     
+//       posts.forEach((postDATA) => {
+//       createPost(postDATA)
+//     });
+//   })
+
+
+  const createUser = (userDATA) => {
+    const user = document.createElement('div');
+    user.className = 'user';
+  
+    const image = document.createElement('div');
+    image.className = 'image';
+  
+    const img = document.createElement('img');
+    img.src = userDATA.user_url_img;
+  
+    const username = document.createElement('h3');
+    username.className = 'username';
+    username.textContent = userDATA.username;
+    username.onclick=()=>{
+      // addProfile(userDATA.id)
+     window.location.href = `/profile/${userDATA.id}`;
+    }
+    image.appendChild(img);
+  
+    user.appendChild(image);
+    user.appendChild(username);
+  
+    users.appendChild(user);
+  };

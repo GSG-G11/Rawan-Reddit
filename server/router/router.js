@@ -37,7 +37,7 @@ router.get('/profile/:id/show', getProfileController);
 
 //pages router
 router.get('/', home);
-router.get('/profile', profile);
+router.get('/profile/:id', profile);
 router.get('/login', login);
 router.get('/signup', signup);
 router.get('/logout', logoutControllers);
