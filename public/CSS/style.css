@@ -129,8 +129,7 @@ form .field button:active {
   align-items: center;
   flex-wrap: wrap;
   padding: 20px;
-  margin-top: 25px;
-  margin-left: 120px;
+  margin-left: 110px;
 }
 
 .posts .box {
@@ -178,8 +177,6 @@ form .field button:active {
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
-  /* display: flex;
-  justify-content: space-evenly; */
 }
 
 .box .post .post_data p ,
@@ -310,7 +307,8 @@ aside {
 }
 
 .profile {
-  height: 300px;
+  height: 310px;
+  padding: 5px;
 }
 
 .profileUser {
@@ -323,9 +321,9 @@ aside {
 }
 
 .profileUser .profileimage {
-  margin: 30px 0;
-  height: 100px;
-  width: 100px;
+  margin: 10px 0;
+  height: 200px;
+  width: 200px;
   background: #a987a8;
   padding: 3px;
   border-radius: 50%;

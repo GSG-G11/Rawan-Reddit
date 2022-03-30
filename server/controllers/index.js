@@ -1,7 +1,17 @@
 const { login, signup, home, profile } = require('./pages');
-const { signupControllers, loginControllers, getUsers , logoutControllers} = require('./users');
-const { addPostControllers ,getPostControllers} = require('./posts');
-const {addCommentController, getCommentController, deleteCommentController} = require('./comments');
+const {
+  signupControllers,
+  loginControllers,
+  getUsers,
+  logoutControllers,
+} = require('./users');
+const { addPostControllers, getPostControllers } = require('./posts');
+const {
+  addCommentController,
+  getCommentController,
+  deleteCommentController,
+} = require('./comments');
+const { getProfileController } = require('./profile');
 
 module.exports = {
   login,
@@ -16,5 +26,6 @@ module.exports = {
   addCommentController,
   getCommentController,
   deleteCommentController,
-  logoutControllers
+  logoutControllers,
+  getProfileController,
 };

@@ -16,3 +16,4 @@ const hideProfileLogout = () => {
   signup.style.display = 'inline-block';
   login.style.display = 'inline-block';
 };
+
